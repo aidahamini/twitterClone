@@ -1,9 +1,24 @@
-const SidebarItem = () => {
+import { IconType } from 'react-icons';
+
+interface SidebarItemProps{
+    label: string, 
+    href: string,
+    icon: IconType
+    onClick?: () => void;
+}
+
+const SidebarItem: React.FC<SidebarItemProps> = ({
+    label,
+    href,
+    icon: Icon,
+    onClick
+}) => {
     return(
         <div className="flex fle-row items-center">
             <div className="relative 
             rounded-full 
-            h-14 w-14 
+            h-14
+            w-14 
             flex 
             items-center 
             justify-center 
@@ -11,8 +26,9 @@ const SidebarItem = () => {
             hover:hg-slate-300 
             hover:bg-opacity-10 
             cursor-pointer 
-            lg-hidden">
-                <Icon size={28} color='white'/>
+            lg-hidden"
+            >
+                <Icon size={28} color="white"/>
             </div>
             <div className="relative 
             hidden 
@@ -23,9 +39,8 @@ const SidebarItem = () => {
             rounded-full 
             hover:bg-slate-300 
             hover:bg-opacity-10 
-            cursor-pointer 
-            items-center">
-                <Icon size={24} color='white'/>
+            cursor-pointer">
+                <Icon size={24} color="white"/>
                 <p className="hidden lg:block text-white text-xl">
                     {label}
                 </p>

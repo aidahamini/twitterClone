@@ -2,6 +2,8 @@ import { FaUser } from 'react-icons/fa';
 import SidebarLogo from './SidebarLogo';
 import { BsHouseFill, BsBellFill } from 'react-icons/bs';
 import SidebarItem from './SidebarItem';
+import {BiLogOut} from 'react-icons/bi'
+import SidebarTweetButton from './SidebarTweetButton';
 
 const Sidebar = () => {
     const items = [
@@ -30,9 +32,10 @@ const Sidebar = () => {
                         key={item.href}
                         href={item.href}
                         label={item.label}
-                        icon={item.icon}  />
+                        icon={item.icon}/>
                     ))}
-                    <SidebarItem/>
+                    <SidebarItem onClick={() => { } } icon={BiLogOut} label="Logout" href={''}/>
+                    <SidebarTweetButton/>
                 </div>
             </div>
         </div>
